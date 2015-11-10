@@ -1,4 +1,9 @@
+#  Created by Tiago Ferreira on 05/11/2015.
+#  Copyright (c) 2015 Tiago Ferreira. All rights reserved.
+
+
 import random
+
 
 NumberOne = random.randint(1,5000)
 NumberTwo = random.randint(1,5000)

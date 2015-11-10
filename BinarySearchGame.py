@@ -1,5 +1,10 @@
 #Binary Serach Game
 
+
+#  Created by Tiago Ferreira on 09/11/2015.
+#  Copyright (c) 2015 Tiago Ferreira. All rights reserved.
+
+
 import sys      #Used to exit the program at the end.
 import time     #Used to give delay on restarting the program.
 

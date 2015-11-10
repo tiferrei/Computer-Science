@@ -2,6 +2,9 @@
 
 #ChooseADoor
 
+#  Created by Tiago Ferreira on 25/09/2015.
+#  Copyright (c) 2015 Tiago Ferreira. All rights reserved.
+
 from random import randint
 import time
 import sys
