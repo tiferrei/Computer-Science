@@ -8,8 +8,8 @@
 import sys      #Used to exit the program at the end.
 import time     #Used to give delay on restarting the program.
 
-positiveOptions = ["YES","yes","Yes","y","Y","Yup","yup","sim","s"]
-higherOptions = ["Higher","H","h","High","high"]
+positiveOptions = ["YES","yes","Yes","y","Y","Yup","yup","sim","s"] #Dictionary for positive options.
+higherOptions = ["Higher","H","h","High","high"]  #Dictionary for higher options.
 guessed = False    #Creating default values for vital variables.
 maximum = 1000
 minimum = 1

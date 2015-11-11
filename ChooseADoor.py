@@ -14,18 +14,22 @@ StrScore = str(Score)
 Dead = False
 WantsToPlay = True
 
+positiveOptions = ["YES","yes","Yes","y","Y","Yup","yup","sim","s"]
+
+
+
 while WantsToPlay == True:
 
     tutorialRequired = input("Would you like to go through the tutorial? (YES / NO): ")
 
-    if tutorialRequired == "YES":
+    if tutorialRequired in positiveOptions:
         print("""Alright mortal, you were kidnaped and you wake up in a room.
     There are 3 doors, two of them let you continue,
     one of them gives you a painful death...
     Yeah, sorry about that...
         """)
         ready = input("Ready mortal? (YES / NO): ")
-        if ready =="YES":
+        if ready in positiveOptions:
             print("Starting game in 3...")
             time.sleep(1)
             print("2...")
@@ -41,7 +45,7 @@ while WantsToPlay == True:
         print("""Alright smarty pants let's see if you live to tell your story...
         """)
         ready = input("Ready mortal? (YES / NO): ")
-        if ready =="YES":
+        if ready in positiveOptions:
             print("Starting game in 3...")
             time.sleep(1)
             print("2...")
@@ -103,7 +107,7 @@ while WantsToPlay == True:
 
     PlayAgain = input("Do you want to play again? ")
 
-    if PlayAgain == "YES":
+    if PlayAgain in positiveOptions:
         print("Alright, mortal.")
     else:
         print("Goodbye mortal.")
