@@ -62,12 +62,15 @@ wins! There will be 5 rounds... """)
             print("I won this round!")
             print("(" + str(ComputerTotal) + " > " + str(UserTotal) + ")")
             ComputerScore = ComputerScore + 1
+            time.sleep(1)
         elif ComputerTotal < UserTotal:
             print("You won this round!")
             print("(" + str(ComputerTotal) + " < " + str(UserTotal) + ")")
             UserScore = UserScore + 1
+            time.sleep(1)
         elif ComputerScore == UserScore:
             print("Draw!")
+            time.sleep(1)
     print("The game is over!")
     if ComputerScore == UserScore:
         print("It's a draw!")
