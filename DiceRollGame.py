@@ -12,7 +12,7 @@ dice2 = 0 #Intialize dice2.
 dice3 = 0 #Intialize dice3.
 dice4 = 0 #Intialize dice4.
 dice5 = 0 #Intialize dice5.
-dice6 = 0 #Intialize dice6. Yeah, I'm really used to C :)
+dice6 = 0 #Intialize dice6. Yeah, I'm really used to C# :)
 
 
 while WantsToPlay == True: #Started main loop.
