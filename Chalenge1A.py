@@ -1,3 +1,9 @@
+#Chalenge 1A
+
+#  Created by Tiago Ferreira on 12/11/2015.
+#  Copyright (c) 2015 Tiago Ferreira. All rights reserved.
+
+
 animals = []
 
 num = 1 + int(input("How many animals do you want to add? "))

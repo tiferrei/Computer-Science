@@ -1,3 +1,8 @@
+#Dice Roll Game
+
+#  Created by Tiago Ferreira on 09/11/2015.
+#  Copyright (c) 2015 Tiago Ferreira. All rights reserved.
+
 import random #import random module.
 import sys #import system module.
 import time #import time module.
