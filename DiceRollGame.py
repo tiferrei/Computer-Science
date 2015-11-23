@@ -3,10 +3,37 @@
 #  Created by Tiago Ferreira on 09/11/2015.
 #  Copyright (c) 2015 Tiago Ferreira. All rights reserved.
 
+#Version 2.0
+
+#Script now asks the user if he/she wnats to roll 3 or 6 dices.
+
+#Added support for:
+
+#Italian
+#French
+#Spanish
+#German
+#Dutch
+#Afrikaans
+#Swedish
+#Norwegian
+#Danish
+#Faroese
+#Cape-Verdean Creole
+#Hebrew(Yiddish)
+#Irish
+#Esperanto
+#Japanese
+#Mandarin
+#Swahili
+
+
 import random #import random module.
 import sys #import system module.
 import time #import time module.
-positiveOptions = ["YES","yes","Yes","y","Y","Yup","yup","sim","s"] #Created Array for possitive options.
+positiveOptions = ["YES","yes","Yes","y","Y","Yup","yup","sim","s", "si", "sí", "Si", "Sí",
+                   "Oui", "oui", "Ja", "ja", "Ken", "ken", "sea", "Sea", "Shah", "shah",
+                   "Jes", "jes", "Hai", "hai", "Ndiyo", "ndiyo", "是", "Shi", "shi"] #Created Array for possitive options.
 WantsToPlay = True #Close the loop.
 ComputerTotal = 0 #Declare the computer total for each round.
 UserTotal = 0 #Declare the computer total for each round.
@@ -15,9 +42,15 @@ UserScore = 0 #Declare the user's points.
 dice1 = 0 #Intialize dice1.
 dice2 = 0 #Intialize dice2.
 dice3 = 0 #Intialize dice3.
+dice11 = 0 #Intialize dice11.
+dice12 = 0 #Intialize dice12.
+dice13 = 0 #Intialize dice13.
 dice4 = 0 #Intialize dice4.
 dice5 = 0 #Intialize dice5.
-dice6 = 0 #Intialize dice6. Yeah, I'm really used to C# :)
+dice6 = 0 #Intialize dice6.
+dice24 = 0 #Intialize dice24.
+dice25 = 0 #Intialize dice25.
+dice26 = 0 #Intialize dice26. Yeah, I'm really used to C# :)
 
 
 while WantsToPlay == True: #Started main loop.
@@ -34,7 +67,10 @@ wins! There will be 5 rounds... """)
     else: #Else:
         print("Alright...") #Print Alright.
         time.sleep(0.5) #Wait half of a second.
-    IsReady = input("Ready? ") #Ask if the user is ready.
+
+    dicesToRoll = int(input("Do you want to play with 3 or 6 dices? "))
+
+    IsReady = input("OK, ready? ") #Ask if the user is ready.
     if IsReady in positiveOptions: #If yes then start the countdown.
         print("Starting game in...")
         print("3")
@@ -57,10 +93,20 @@ wins! There will be 5 rounds... """)
         dice4 = random.randint(1,7) #Give random values on 1 to 6 for each dice.
         dice5 = random.randint(1,7) #Give random values on 1 to 6 for each dice.
         dice6 = random.randint(1,7) #Give random values on 1 to 6 for each dice.
+        dice11 = random.randint(1,7) #Give random values on 1 to 6 for each dice.
+        dice12 = random.randint(1,7) #Give random values on 1 to 6 for each dice.
+        dice13 = random.randint(1,7) #Give random values on 1 to 6 for each dice.
+        dice24 = random.randint(1,7) #Give random values on 1 to 6 for each dice.
+        dice25 = random.randint(1,7) #Give random values on 1 to 6 for each dice.
+        dice26 = random.randint(1,7) #Give random values on 1 to 6 for each dice.
         print("Summing...") #Give the info that is summing
         time.sleep(0.5) #Wait half of a second.
-        ComputerTotal = (dice1 + dice2 + dice3) #Sum the total for the computer.
-        UserTotal = (dice4 + dice5 + dice6) #Sum the total for the user.
+        if dicesToRoll == 3:
+            ComputerTotal = (dice1 + dice2 + dice3) #Sum the total for the computer.
+            UserTotal = (dice4 + dice5 + dice6) #Sum the total for the user.
+        else:
+            ComputerTotal = (dice1 + dice2 + dice3 + dice11 + dice12 + dice13) #Sum the total for the computer.
+            UserTotal = (dice4 + dice5 + dice6 + dice24 + dice25 + dice26) #Sum the total for the user.
         print("Comparing totals....") #Give the info that is comparing.
         time.sleep(0.5) #Wait half of a second.
         if ComputerTotal > UserTotal: #Compare the totals, if the computer wins this round,
