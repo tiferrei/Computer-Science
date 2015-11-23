@@ -91,6 +91,6 @@ wins! There will be 5 rounds... """)
         WantsToPlay = True #Set the while loop to run again.
     else: #Else,
         WantsToPlay = False #End the loop.
-        print("Goodbye, " + name + ".") #Say goodbye.
+        print("Goodbye, " + name + ", have a nice day!") #Say goodbye.
         time.sleep(0.5) #Wait half a second.
         sys.exit() #Exit the program script.
