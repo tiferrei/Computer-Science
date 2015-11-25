@@ -28,8 +28,14 @@ while passwordIsntValid == True:
 
     password = input("Password: ")
 
+    print("Checking values...")
+    time.sleep(0.5)
+
     if len(password) > 7:
         validLenght = True
+
+
+
 
     for character in password:
         if character in upercaseOptions:
@@ -41,6 +47,7 @@ while passwordIsntValid == True:
 
 
     if validLenght == True and validSpecialChar == True and validNumber == True and validUperCase == True:
+
         print("Your password is valid.")
 
         checkPasswordIsntValid = True
@@ -55,9 +62,12 @@ while passwordIsntValid == True:
                 print("Password saved.")
                 print("Password: " + username)
                 print("Password: " + password)
+                time.sleep(0.5)
                 sys.exit()
             else:
                 print("Passwords don't match, please try again.")
+                time.sleep(0.3)
     else:
         print("""Your password must have at least 8 characters, 1 number, 1 upper
-        case letter and a special character. Please try again.""")
+case letter and a special character. Please try again.""")
+        time.sleep(0.5)
