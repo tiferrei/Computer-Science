@@ -16,42 +16,46 @@ Paper = ["P", "p", "Paper", "paper"]
 Rock = ["R", "r", "Rock", "rock"]
 Scissors = ["S", "s", "Scissors", "scissors"]
 
-UserScore = 0
+UserScore = 0 # <-- INITIALISING A VARIABLE (Create variable by NAME = VALUE)
 ComputerScore = 0
 UserTotal = 0
 ComputerTotal = 0
 Username = input("Hi there! What's your name? ")
+
+if Username == "":
+    print("You need to tell me your name!")
+    time.sleep(0.5)
+    sys.exit()
+
 print("Welcome " + Username + ", to the Rock Paper Scissors game!")
 numberOfRounds = int(input("How many rounds would you like to play? "))
 
 WantsToPlay = True
 while WantsToPlay == True:
 
-
-
     IsReady = input("OK, are you ready? ") #Ask if the user is ready.
     if IsReady in positiveOptions or IsReady == "": #If yes then start the countdown.
-        print("Starting game in...")
-        print("3")
-        time.sleep(1)
-        print("2")
-        time.sleep(1)
-        print("1")
-        time.sleep(1)
-        print("GO!")
+        print("Starting game in...") #
+        print("3") #
+        time.sleep(1) #
+        print("2") #
+        time.sleep(1) #    <-- SEQUENCE (Serie of processes with the same indentation.)
+        print("1") #
+        time.sleep(1) #
+        print("GO!") #
     else: #Otherwise:
         print("Goodbye.") #Say Goodbye.
         break #Break the loop.
         sys.exit() #Exit the program.
 
-    for x in range(0,numberOfRounds):
+    for x in range(0,numberOfRounds): # <-- ITERATION (for x in range(y,z): )
 
         RandValue = random.randint(0,2)
         ComputerChoice = ComputerOptions[RandValue]
 
-        UserInput = input("Paper, Rock or Scissors? ")
+        UserInput = input("Paper, Rock or Scissors? ") # <-- USER INPUT (NAMEVAR = input("Random text"))
         if UserInput in Paper:
-            UserChoice = "Paper"
+            UserChoice = "Paper" # <-- SELECTION (Specific instruction as consequece of an if statement.)
         elif UserInput in Rock:
             UserChoice = "Rock"
         elif UserInput in Scissors:
@@ -77,10 +81,6 @@ while WantsToPlay == True:
             print("You won!")
             time.sleep(0.5)
             UserScore = UserScore + 1
-        #elif UserChoice == "Paper" and ComputerChoice == "Scissors":
-        #    print("I won!")
-        #    time.sleep(0.5)
-        #    ComputerScore = ComputerScore + 1
         elif UserChoice == "Scissors" and ComputerChoice == "Rock":
             print("I won!")
             time.sleep(0.5)
@@ -119,3 +119,11 @@ while WantsToPlay == True:
         time.sleep(0.5)
         break
         sys.exit()
+
+#---------------------------------------------------//---------------------------------------------------
+# ACTIVITY 3
+#
+# Read the error output, identify the line where the error occurs and what's wrong,
+# revise the syntax used, check for spelling mistakes and identation mistakes.
+# Also check if all your variables are with correct values by printing them at a point
+# of the script. If you aren't able to solve it, ask for help.
