@@ -3,35 +3,35 @@
 #  Created by Tiago Ferreira on 02/12/2015.
 #  Copyright (c) 2015 Tiago Ferreira. All rights reserved.
 
-import random
-import sys
-import time
+import random #import module random
+import sys #import module system
+import time #import module time
 
-positiveOptions = ["YES","yes","Yes","y","Y","Yup","yup","sim","s", "si", "sí", "Si", "Sí",
+positiveOptions = ["YES","yes","Yes","y","Y","Yup","yup","sim","s", "si", "sí", "Si", "Sí", #Declare positive array.
                    "Oui", "oui", "Ja", "ja", "Ken", "ken", "sea", "Sea", "Shah", "shah",
                    "Jes", "jes", "Hai", "hai", "Ndiyo", "ndiyo", "是", "Shi", "shi"]
 
-ComputerOptions = ["Rock", "Paper", "Scissors"]
-Paper = ["P", "p", "Paper", "paper"]
-Rock = ["R", "r", "Rock", "rock"]
-Scissors = ["S", "s", "Scissors", "scissors"]
+ComputerOptions = ["Rock", "Paper", "Scissors"] #Declare Computer Options
+Paper = ["P", "p", "Paper", "paper"] #Options for paper.
+Rock = ["R", "r", "Rock", "rock"] #Options for rock.
+Scissors = ["S", "s", "Scissors", "scissors"] #Options for scissors.
 
 UserScore = 0 # <-- INITIALISING A VARIABLE (Create variable by NAME = VALUE)
-ComputerScore = 0
-UserTotal = 0
-ComputerTotal = 0
-Username = input("Hi there! What's your name? ")
+ComputerScore = 0 #Initialize variable
+UserTotal = 0 #Initialize variable
+ComputerTotal = 0 #Initialize variable
+Username = input("Hi there! What's your name? ") #Ask for input
 
-if Username == "":
+if Username == "": #Idiot proof, won't accept blank response.
     print("You need to tell me your name!")
     time.sleep(0.5)
     sys.exit()
 
-print("Welcome " + Username + ", to the Rock Paper Scissors game!")
-numberOfRounds = int(input("How many rounds would you like to play? "))
+print("Welcome " + Username + ", to the Rock Paper Scissors game!") #welcome the user.
+numberOfRounds = int(input("How many rounds would you like to play? ")) #Get number of rounds.
 
-WantsToPlay = True
-while WantsToPlay == True:
+WantsToPlay = True #Inicialze loop variable.
+while WantsToPlay == True: #Start loop.
 
     IsReady = input("OK, are you ready? ") #Ask if the user is ready.
     if IsReady in positiveOptions or IsReady == "": #If yes then start the countdown.
@@ -61,17 +61,17 @@ while WantsToPlay == True:
         elif UserInput in Scissors:
             UserChoice = "Scissors"
         else:
-            print("Don't try to fool me.")
+            print("Don't try to fool me.") #If the answer isn't valid:
             time.sleep(0.5)
             break
             sys.exit()
 
-        if UserChoice == ComputerChoice:
-            print("Tie!")
+        if UserChoice == ComputerChoice: #If the choice is the same,
+            print("Tie!") #Tie
             time.sleep(0.5)
         elif UserChoice == "Rock" and ComputerChoice == "Paper":
             print("I won!")
-            ComputerScore = ComputerScore + 1
+            ComputerScore = ComputerScore + 1 #Give 1 point to the computer
             time.sleep(0.5)
         elif UserChoice == "Rock" and ComputerChoice == "Scissors":
             print("You won!")
@@ -94,12 +94,12 @@ while WantsToPlay == True:
             time.sleep(0.5)
             ComputerScore = ComputerScore + 1
 
-    print("End of game!")
+    print("End of game!") #print end of game.
     time.sleep(0.5)
 
-    if ComputerScore > UserScore:
-        print("Aha! I won the game!")
-        print("With a total of " + str(ComputerScore) + " points,")
+    if ComputerScore > UserScore: #If the computer score is bigger than the user score:
+        print("Aha! I won the game!") #Say who won.
+        print("With a total of " + str(ComputerScore) + " points,") #Why
         print("while you only scored " + str(UserScore) + ".")
     elif ComputerScore == UserScore:
         print("It's a tie!")
@@ -111,14 +111,14 @@ while WantsToPlay == True:
         print("Congratulations, " + Username + "!")
 
     time.sleep(1)
-    UserWantsToPlay = input("Do you want to play again? ")
-    if UserWantsToPlay in positiveOptions:
+    UserWantsToPlay = input("Do you want to play again? ") #Ask the user if he/she wnats to play again.
+    if UserWantsToPlay in positiveOptions: #If yes, restart the game.
         time.sleep(0.5)
-    else:
-        print("Goodbye, " + Username + "!")
+    else: else,
+        print("Goodbye, " + Username + "!") #Say goodbye.
         time.sleep(0.5)
         break
-        sys.exit()
+        sys.exit() #Exit.
 
 #---------------------------------------------------//---------------------------------------------------
 # ACTIVITY 3
