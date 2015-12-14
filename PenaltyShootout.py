@@ -24,7 +24,8 @@ savedGoals = 0
 UserSavedGoals = 0
 
 
-print("Helo there!")
+print("Hello there!")
+time.sleep(0.5)
 goalkeeperOrKicker = input("Do you want to start by being the kicker or the goalkeeper? ")
 
 if goalkeeperOrKicker in KickerOptions:
