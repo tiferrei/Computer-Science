@@ -3,6 +3,7 @@
 #  Created by Tiago Ferreira on 07/12/2015.
 #  Copyright (c) 2015 Tiago Ferreira. All rights reserved.
 
+<<<<<<< HEAD
 import random #import random library
 import sys #import sys library
 import time #import time library
@@ -31,6 +32,37 @@ if GoalkeeperOrKicker in KickerOptions: #If Kicker, then:
     for x in range(5): #Do this 5 times:
 
         KickWidthInput = input("Where to do you want to kick the ball? (Left, Centre, Right): ") #Ask for
+=======
+import random
+import sys
+import time
+
+High = ["H", "h", "High", "high"]
+Low = ["L", "l", "low", "Low"]
+Left = ["L", "l", "Left", "left"]
+Centre = ["C", "c", "Centre", "centre"]
+Right = ["R", "r", "right", "Right"]
+ComputerHightOptions = ["High", "Low"]
+ComputerWidthOptions = ["Left", "Center", "Right"]
+KickerOptions = ["kicker", "k", "K", "Kicker"]
+SaveWidthOptions = ["Left", "Centre", "Right"]
+SaveHeightOptions = ["High", "Low"]
+GoalkeeperOptions = ["goalkeeper", "g", "G", "Goalkeeper"]
+Goals = 0
+ComputerGoals = 0
+savedGoals = 0
+UserSavedGoals = 0
+
+
+print("Hello there!")
+time.sleep(0.5)
+goalkeeperOrKicker = input("Do you want to start by being the kicker or the goalkeeper? ")
+
+if goalkeeperOrKicker in KickerOptions:
+    for x in range(5):
+
+        KickWidthInput = input("Where to do you want to kick the ball? (Left, Centre, Right): ")
+>>>>>>> origin/master
         KickHightInput = input("Where to do you want to kick the ball? (High, Low): ")
 
         if KickHightInput in High:
