@@ -3,36 +3,6 @@
 #  Created by Tiago Ferreira on 07/12/2015.
 #  Copyright (c) 2015 Tiago Ferreira. All rights reserved.
 
-<<<<<<< HEAD
-import random #import random library
-import sys #import sys library
-import time #import time library
-
-High = ["H", "h", "High", "high"] #Define High options
-Low = ["L", "l", "low", "Low"] #Define Low options.
-Left = ["L", "l", "Left", "left"] #Define left options
-Centre = ["C", "c", "Centre", "centre"] #Define Centre options.
-Right = ["R", "r", "right", "Right"] #Define right options.
-ComputerHightOptions = ["High", "Low"] #Define the computer options for the Hight.
-ComputerWidthOptions = ["Left", "Center", "Right"] #Define the computer options for the width.
-KickerOptions = ["kicker", "k", "K", "Kicker"] #Define the options for the kicker.
-SaveWidthOptions = ["Left", "Centre", "Right"] #Define the options for the goalkeeper width.
-SaveHeightOptions = ["High", "Low"] #Define the options for the goalkeeper height.
-GoalkeeperOptions = ["goalkeeper", "g", "G", "Goalkeeper"] #Define the options for Goalkeeper.
-Goals = 0 #Define Goals as 0.
-ComputerGoals = 0 #Define ComputerGoals as 0.
-SavedGoals = 0 #Define SavedGoals as 0.
-UserSavedGoals = 0 #Define UserSavedGoals as 0.
-
-
-print("Helo there!") #Welcome de user.
-GoalkeeperOrKicker = input("Do you want to start by being the kicker or the goalkeeper? ") #Ask for Goalkeeper or Kicker.
-
-if GoalkeeperOrKicker in KickerOptions: #If Kicker, then:
-    for x in range(5): #Do this 5 times:
-
-        KickWidthInput = input("Where to do you want to kick the ball? (Left, Centre, Right): ") #Ask for
-=======
 import random
 import sys
 import time
@@ -54,15 +24,13 @@ savedGoals = 0
 UserSavedGoals = 0
 
 
-print("Hello there!")
-time.sleep(0.5)
+print("Helo there!")
 goalkeeperOrKicker = input("Do you want to start by being the kicker or the goalkeeper? ")
 
 if goalkeeperOrKicker in KickerOptions:
     for x in range(5):
 
         KickWidthInput = input("Where to do you want to kick the ball? (Left, Centre, Right): ")
->>>>>>> origin/master
         KickHightInput = input("Where to do you want to kick the ball? (High, Low): ")
 
         if KickHightInput in High:
@@ -95,7 +63,7 @@ if goalkeeperOrKicker in KickerOptions:
             print("While I went to " + ComputerHight + " and " + ComputerWidth + ".")
             print()
             print("Save! Aha!")
-            SavedGoals = SavedGoals + 1
+            savedGoals = savedGoals + 1
         else:
             print()
             print("You kicked to " + KickHight + " and " + KickWidth + ".")
@@ -106,7 +74,7 @@ if goalkeeperOrKicker in KickerOptions:
 
     print("End of game!")
     print("You made " + str(Goals) + " goals.")
-    print("I saved " + str(SavedGoals) + " goals.")
+    print("I saved " + str(savedGoals) + " goals.")
     time.sleep(1)
     print("Now let's extange roles!")
     time.sleep(0.5)
@@ -160,7 +128,7 @@ if goalkeeperOrKicker in KickerOptions:
     print("You saved " + str(UserSavedGoals) + " goals.")
 
 
-elif GoalkeeperOrKicker in GoalkeeperOptions:
+elif goalkeeperOrKicker in GoalkeeperOptions:
 
     for x in range(5):
 
@@ -248,7 +216,7 @@ elif GoalkeeperOrKicker in GoalkeeperOptions:
             print("While I went to " + ComputerHight + " and " + ComputerWidth + ".")
             print()
             print("Save! Aha!")
-            SavedGoals = SavedGoals + 1
+            savedGoals = savedGoals + 1
         else:
             print()
             print("You kicked to " + KickHight + " and " + KickWidth + ".")
@@ -262,4 +230,3 @@ elif GoalkeeperOrKicker in GoalkeeperOptions:
 else:
     print("Dont try to fool me!")
     sys.extit()
-    
