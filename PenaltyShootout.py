@@ -3,34 +3,34 @@
 #  Created by Tiago Ferreira on 07/12/2015.
 #  Copyright (c) 2015 Tiago Ferreira. All rights reserved.
 
-import random
-import sys
-import time
+import random #import random library
+import sys #import sys library
+import time #import time library
 
-High = ["H", "h", "High", "high"]
-Low = ["L", "l", "low", "Low"]
-Left = ["L", "l", "Left", "left"]
-Centre = ["C", "c", "Centre", "centre"]
-Right = ["R", "r", "right", "Right"]
-ComputerHightOptions = ["High", "Low"]
-ComputerWidthOptions = ["Left", "Center", "Right"]
-KickerOptions = ["kicker", "k", "K", "Kicker"]
-SaveWidthOptions = ["Left", "Centre", "Right"]
-SaveHeightOptions = ["High", "Low"]
-GoalkeeperOptions = ["goalkeeper", "g", "G", "Goalkeeper"]
-Goals = 0
-ComputerGoals = 0
-savedGoals = 0
-UserSavedGoals = 0
+High = ["H", "h", "High", "high"] #Define High options
+Low = ["L", "l", "low", "Low"] #Define Low options.
+Left = ["L", "l", "Left", "left"] #Define left options
+Centre = ["C", "c", "Centre", "centre"] #Define Centre options.
+Right = ["R", "r", "right", "Right"] #Define right options.
+ComputerHightOptions = ["High", "Low"] #Define the computer options for the Hight.
+ComputerWidthOptions = ["Left", "Center", "Right"] #Define the computer options for the width.
+KickerOptions = ["kicker", "k", "K", "Kicker"] #Define the options for the kicker.
+SaveWidthOptions = ["Left", "Centre", "Right"] #Define the options for the goalkeeper width.
+SaveHeightOptions = ["High", "Low"] #Define the options for the goalkeeper height.
+GoalkeeperOptions = ["goalkeeper", "g", "G", "Goalkeeper"] #Define the options for Goalkeeper.
+Goals = 0 #Define Goals as 0.
+ComputerGoals = 0 #Define ComputerGoals as 0.
+SavedGoals = 0 #Define SavedGoals as 0.
+UserSavedGoals = 0 #Define UserSavedGoals as 0.
 
 
-print("Helo there!")
-goalkeeperOrKicker = input("Do you want to start by being the kicker or the goalkeeper? ")
+print("Helo there!") #Welcome de user.
+GoalkeeperOrKicker = input("Do you want to start by being the kicker or the goalkeeper? ") #Ask for Goalkeeper or Kicker.
 
-if goalkeeperOrKicker in KickerOptions:
-    for x in range(5):
+if GoalkeeperOrKicker in KickerOptions: #If Kicker, then:
+    for x in range(5): #Do this 5 times:
 
-        KickWidthInput = input("Where to do you want to kick the ball? (Left, Centre, Right): ")
+        KickWidthInput = input("Where to do you want to kick the ball? (Left, Centre, Right): ") #Ask for
         KickHightInput = input("Where to do you want to kick the ball? (High, Low): ")
 
         if KickHightInput in High:
@@ -63,7 +63,7 @@ if goalkeeperOrKicker in KickerOptions:
             print("While I went to " + ComputerHight + " and " + ComputerWidth + ".")
             print()
             print("Save! Aha!")
-            savedGoals = savedGoals + 1
+            SavedGoals = SavedGoals + 1
         else:
             print()
             print("You kicked to " + KickHight + " and " + KickWidth + ".")
@@ -74,7 +74,7 @@ if goalkeeperOrKicker in KickerOptions:
 
     print("End of game!")
     print("You made " + str(Goals) + " goals.")
-    print("I saved " + str(savedGoals) + " goals.")
+    print("I saved " + str(SavedGoals) + " goals.")
     time.sleep(1)
     print("Now let's extange roles!")
     time.sleep(0.5)
@@ -128,7 +128,7 @@ if goalkeeperOrKicker in KickerOptions:
     print("You saved " + str(UserSavedGoals) + " goals.")
 
 
-elif goalkeeperOrKicker in GoalkeeperOptions:
+elif GoalkeeperOrKicker in GoalkeeperOptions:
 
     for x in range(5):
 
@@ -216,7 +216,7 @@ elif goalkeeperOrKicker in GoalkeeperOptions:
             print("While I went to " + ComputerHight + " and " + ComputerWidth + ".")
             print()
             print("Save! Aha!")
-            savedGoals = savedGoals + 1
+            SavedGoals = SavedGoals + 1
         else:
             print()
             print("You kicked to " + KickHight + " and " + KickWidth + ".")
@@ -230,6 +230,4 @@ elif goalkeeperOrKicker in GoalkeeperOptions:
 else:
     print("Dont try to fool me!")
     sys.extit()
-
-
-#----------------------------------------------//----------------------------------------------
+    
