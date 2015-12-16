@@ -20,18 +20,21 @@ LastElfNameArray = ["Twinkle-Toes","Sugar-Plum","Sparkle-Pants","McJingles","Pep
 Letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
             "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
+Months = ["January", "February", "March", "April", "May", "June", "July",
+          "August", "September", "October", "November", "December"]
 
-UserFirstName = input("Please enter your first name: ")
-UserLastName = input("Please enter your last name: ")
+UserFirstName = input("Please enter your first name (John): ")
+UserMonth = input("Please enter your Month of birth (July): ")
 
 UserFirstLetter = UserFirstName[0]
-UserLastLetter = UserLastName[0]
+
+
 
 UserFirstLetterIndex = Letters.index(UserFirstLetter)
-UserLastLetterIndex = Letters.index(UserLastLetter)
+UserMonthIndex = Months.index(UserMonth)
 
 FirstElfName = FirstElfNameArray[UserFirstLetterIndex]
-LastElfName = LastElfNameArray[UserLastLetterIndex]
+LastElfName = LastElfNameArray[UserMonthIndex]
 
 
 ElfName = FirstElfName + " " + LastElfName
