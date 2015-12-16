@@ -76,8 +76,8 @@ while UserReplay == True: #Initiate loop.
 #Yes, the program has been fully tested, every input and if statement
 #consequence has been tested.
 
-#A good feature is that it accepts a lot of forms for the name (capital or lowercase)
-#, a bad thing is that it requires the month to be inputed exactly asthe example shows.
+#A good feature is that it accepts a lot of forms for the name (capital or lowercase),
+# a bad thing is that it requires the month to be inputed exactly as the example shows.
 
 #By writing this program I learnt to use the .index() command.
 
