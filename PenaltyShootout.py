@@ -3,11 +3,11 @@
 #  Created by Tiago Ferreira on 07/12/2015.
 #  Copyright (c) 2015 Tiago Ferreira. All rights reserved.
 
-import random
+import random #Import some modules.
 import sys
 import time
 
-High = ["H", "h", "High", "high"]
+High = ["H", "h", "High", "high"] #Create lists for possible options.
 Low = ["L", "l", "low", "Low"]
 Left = ["L", "l", "Left", "left"]
 Centre = ["C", "c", "Centre", "centre"]
@@ -18,22 +18,22 @@ KickerOptions = ["kicker", "k", "K", "Kicker"]
 SaveWidthOptions = ["Left", "Centre", "Right"]
 SaveHeightOptions = ["High", "Low"]
 GoalkeeperOptions = ["goalkeeper", "g", "G", "Goalkeeper"]
-Goals = 0
+Goals = 0 #Initialize variables as 0.
 ComputerGoals = 0
 savedGoals = 0
 UserSavedGoals = 0
 
 
-print("Helo there!")
-goalkeeperOrKicker = input("Do you want to start by being the kicker or the goalkeeper? ")
+print("Helo there!") #Welcome the user.
+goalkeeperOrKicker = input("Do you want to start by being the kicker or the goalkeeper? ") #Ask if the user wants to be a goalkeeper or a kicker first.
 
-if goalkeeperOrKicker in KickerOptions:
-    for x in range(5):
+if goalkeeperOrKicker in KickerOptions: #If he/she wnats to go as kicker:
+    for x in range(5): #Do this 5 times.
 
-        KickWidthInput = input("Where to do you want to kick the ball? (Left, Centre, Right): ")
-        KickHightInput = input("Where to do you want to kick the ball? (High, Low): ")
+        KickWidthInput = input("Where to do you want to kick the ball? (Left, Centre, Right): ") #Get location.
+        KickHightInput = input("Where to do you want to kick the ball? (High, Low): ") #Get location.
 
-        if KickHightInput in High:
+        if KickHightInput in High: #Attribute input to correct variables.
             KickHight = "High"
         elif KickHightInput in Low:
             KickHight = "Low"
@@ -41,7 +41,7 @@ if goalkeeperOrKicker in KickerOptions:
             print("Don't try to fool me!")
             sys.exit()
 
-        if KickWidthInput in Left:
+        if KickWidthInput in Left: #Attribute input to correct variables.
             KickWidth = "Left"
         elif KickWidthInput in Centre:
             KickWidth = "Centre"
@@ -51,8 +51,8 @@ if goalkeeperOrKicker in KickerOptions:
             print("Don't try to fool me!")
             sys.exit()
 
-        ComputerRanHight = random.randint(0,1)
-        ComputerRanWidth = random.randint(0,2)
+        ComputerRanHight = random.randint(0,1) #Generate random numbers for the computer hight.
+        ComputerRanWidth = random.randint(0,2) #Generate random numbers for the computer width.
 
         ComputerHight = ComputerHightOptions[ComputerRanHight]
         ComputerWidth = ComputerWidthOptions[ComputerRanWidth]
