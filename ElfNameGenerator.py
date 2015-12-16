@@ -55,3 +55,31 @@ while UserReplay == True: #Initiate loop.
         print("Goodbye, " + ElfName + "!") #Say Goodbye.
         time.sleep(1) #Wait a second.
         sys.exit() #Exit.
+
+#-------------------------------------------------//-------------------------------------------------
+#
+#Yes, this program works without any erros,
+#the program also meets all the requirements.
+#
+#This program works by getting the name of a user and then getting the fisrt letter,
+#this letter is then compared to the letters of an alpahbet list, indexed and attributed with the number
+#of its value on the list, this number is then associated with the index of the elf name. The same
+#happens with the Month and surname.
+
+#The basic contructs are lists; variables; if statements; loop statements;
+#while statements; import command to import modules; the time module and
+#the sys module.
+
+#Yes, the program is readble and (almost) every line of code has been
+#commented with it's functionality.
+
+#Yes, the program has been fully tested, every input and if statement
+#consequence has been tested.
+
+#A good feature is that it accepts a lot of forms for the name (capital or lowercase), a bad thing is that it requires the
+#month to be inputed exactly asthe example shows.
+
+#By writing this program I learnt tu use the .index() command.
+
+#Yes, I coached other pupils. With them I learnt the importance of
+# using sensible variable names.
