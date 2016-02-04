@@ -20,6 +20,21 @@ def summing(): #Define Summing
             print("Wrong, the answer was " + str(Total)) #Give correct answer
     print("you got " + str(GotItSumming) + " questions right!") #At the end, say the number of correct answers
 
+def subtracting(): #Define subtracting
+    GotItSubtracting = 0 #Initialize variable
+    for x in range(1,6): #Loop for 5 times
+        Number1 = random.randint(100, 500) #Generate random int
+        Number2 = random.randint(100, 500) #Generate random int
+        UserAnswer = int(input("What's the subtraction of " + str(Number1) + " and " + str(Number2) + "? ")) #Ask question
+        Total = Number1 - Number2 #Get correct answer
+
+        if UserAnswer == Total: #If the answer is correct:
+            print("Well Done!") #Well done
+            GotItSubtracting= GotItSubtracting + 1 #Add 1 point
+        else: #Else:
+            print("Wrong, the answer was " + str(Total)) #Give correct answer
+    print("you got " + str(GotItSubtracting) + " questions right!") #At the end, say the number of correct answers
+
 def multiplying(): #Define multiplying
     GotItMutliplying = 0 #Initialize varible
     for x in range(1,6): #Loop for 5 times
@@ -35,6 +50,21 @@ def multiplying(): #Define multiplying
             print("Wrong, the answer was " + str(Total))
     print("you got " + str(GotItMutliplying) + " questions right!")
 
+def dividing(): #Define multiplying
+    GotItDividing = 0 #Initialize varible
+    for x in range(1,6): #Loop for 5 times
+        Number1 = random.randint(2, 12) #Generate random number
+        Number2 = random.randint(2, 12) #Generate random number
+        UserAnswer = int(input("What's the devision of " + str(Number1) + " and " + str(Number2) + "? ")) #Ask question
+        Total = Number1 / Number2 #Calculate correct answer
+
+        if UserAnswer == Total: #
+            print("Well Done!")
+            GotItDividing = GotItDividing + 1
+        else:
+            print("Wrong, the answer was " + str(Total))
+    print("you got " + str(GotItDividing) + " questions right!")
+
 def Quiz():
     while 1 == 1:
         IsValid = False
@@ -42,10 +72,12 @@ def Quiz():
             print()
             print("""What do you want to do?
             A -> Addition Quiz
-            B -> multiplication Quiz
+            B -> Multiplication Quiz
+            C -> Subtraction Quiz
+            D -> Dividing Quiz
             Q -> Quit""")
 
-            UserChoice = input("(A, B or Q): ")
+            UserChoice = input("(A, B, C, D or Q): ")
 
             if UserChoice == "Q":
                 IsValid = True
@@ -56,8 +88,14 @@ def Quiz():
             elif UserChoice == "B":
                 IsValid = True
                 multiplying()
+            elif UserChoice == "C":
+                subtracting()
+                IsValid = True
+            elif UserChoice == "D":
+                dividing()
+                IsValid = True
             else:
-                print("Ivalid, please enter A, B or Q")
+                print("Ivalid, please enter A, B, C, D or Q")
                 IsValid = False
 
 Quiz()
