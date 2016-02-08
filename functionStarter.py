@@ -1,7 +1,7 @@
 #Function Starter
 
 #  Created by Tiago Ferreira on 25/01/2016.
-#  Copyright (c) 2015 Tiago Ferreira. All rights reserved.
+#  Copyright (c) 2016 Tiago Ferreira. All rights reserved.
 
 def summing(x,y):
     total = x + y
