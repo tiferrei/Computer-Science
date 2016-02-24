@@ -1,4 +1,4 @@
 # GCSE Computer Studies
-Hi! This is my repo with my GCSE projects, I know it's public and actually I don't mind if you copy them, as long as you give attributes.
+Hi! This is my repo with my GCSE projects, I know it's public and actually I don't mind if you use them, as long as they are useful for your knowledge, not to exercise your copying skills.
 
 Copyright (C) 2015, Tiago Ferreira
