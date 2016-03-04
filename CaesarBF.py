@@ -40,7 +40,7 @@ for i in range(1,26):
             letter = message[x+1]
             letter = letter.upper()
             decryptedMessage = decryptedMessage + " "
-    for w in range(len(decryptedMessage)):
+    #for w in range(len(decryptedMessage)):
         #Having some difficulty getting it to check every individual word :(
         # By the way, I'm using BW JM WZ VWB BW JM, which dechipered is TO BE OR NOT TO BE on ROT18
     if decryptedMessage in(words):
