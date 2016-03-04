@@ -3,9 +3,7 @@
 #  Created by Tiago Ferreira and Alex Butler on 2/03/2016.
 #  Copyright (c) 2016 Tiago Ferreira and Alex Butler. All rights reserved.
 
-import time
-import sys
-import csv
+import time, sys, csv, os
 
 Letters = ["A", "B", "C", "D", "E", "F",
             "G", "H", "I", "J", "K", "L",
@@ -55,18 +53,28 @@ if messageIsCorrect == "YES":
         print('ROT' + str(y-1) + " -> " + FailedAttemptRecord[y])
     correctAttemptIsAvailable = input("Was there any correct attempt? (YES, NO): ")
     if correctAttemptIsAvailable == "YES":
-        correctAttempt = 1 + int(input("According to the rotations, which one was it? (1, 2, 3, etc.): "))
-        correctAttemptChosen = FailedAttemptRecord[correctAttempt]
-        correctAttemptIsRight = input('"' + correctAttemptChosen + '", this one? (YES, NO): ')
-        if correctAttemptIsRight == "YES":
-            print("Thanks, I'll add the new words to the dictionary.")
-            for z in range(len(FailedAttemptRecord[correctAttempt])):
-                decryptedAttempt = FailedAttemptRecord[correctAttempt]
-                decryptedAttemptLetter = decryptedAttempt[z]
-                decryptedAttemptLetter = decryptedAttemptLetter.upper()
-                if decryptedAttemptLetter != " ":
-                    decryptedAttemptWord = decryptedAttemptWord + decryptedAttemptLetter
-
-            with open('dictionary.csv', 'a', newline='') as csvfile:
-                DictWrite = csv.writer(csvfile, delimiter=',')
-                DictWrite.writerow([decryptedAttemptWord])
+        AttemptChosenIsRight = False
+        while AttemptChosenIsRight == False:
+            correctAttempt = 1 + int(input("According to the rotations, which one was it? (1, 2, 3, etc.): "))
+            correctAttemptChosen = FailedAttemptRecord[correctAttempt]
+            correctAttemptIsRight = input('"' + correctAttemptChosen + '", this one? (YES, NO): ')
+            if correctAttemptIsRight == "YES":
+                AttemptChosenIsRight = True
+                print("Thanks, I'll add the new words to the dictionary.")
+                for z in range(len(FailedAttemptRecord[correctAttempt])):
+                    decryptedAttempt = FailedAttemptRecord[correctAttempt]
+                    decryptedAttemptLetter = decryptedAttempt[z]
+                    decryptedAttemptLetter = decryptedAttemptLetter.upper()
+                    if decryptedAttemptLetter != " ":
+                        decryptedAttemptWord = decryptedAttemptWord + decryptedAttemptLetter
+                with open('dictionary.csv', 'a', newline='') as csvfile:
+                    DictWrite = csv.writer(csvfile, delimiter=',')
+                    DictWrite.writerow([decryptedAttemptWord])
+    else:
+        print("Then you got some typo mistake, restarting...")
+        time.sleep(0.5)
+        os.execl(sys.executable, sys.executable, *sys.argv)
+else:
+    print("Restarting...")
+    time.sleep(0.5)
+    os.execl(sys.executable, sys.executable, *sys.argv)
