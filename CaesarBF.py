@@ -15,7 +15,7 @@ message = message.upper()
 decryptedMessage = ""
 decryptedAttemptWord = ""
 foundDecryptedMessage = False
-FailedAttemptRecord = {}
+failedAttemptRecord = {}
 
 with open("dictionary.csv") as csvfile:
     dictionaryCSV = csv.reader(csvfile, delimiter="\n")
@@ -29,19 +29,27 @@ for i in range(1,26):
     for x in range(len(message)):
         letter = message[x]
         letter = letter.upper()
-        currentLetter = Letters.index(letter)
-        newLetter = currentLetter + (looper - 1)
-        if newLetter > 25:
-            newLetter = newLetter - 26
-        decryptedLetter = Letters[newLetter]
-        decryptedMessage = decryptedMessage + decryptedLetter
+        if letter != " ":
+            currentLetter = Letters.index(letter)
+            newLetter = currentLetter + (looper - 1)
+            if newLetter > 25:
+                newLetter = newLetter - 26
+            decryptedLetter = Letters[newLetter]
+            decryptedMessage = decryptedMessage + decryptedLetter
+        else:
+            letter = message[x+1]
+            letter = letter.upper()
+            decryptedMessage = decryptedMessage + " "
+    for w in range(len(decryptedMessage)):
+        #Having some difficulty getting it to check every individual word :(
+        # By the way, I'm using BW JM WZ VWB BW JM, which dechipered is TO BE OR NOT TO BE on ROT18
     if decryptedMessage in(words):
         print('Decrypted message: "' + decryptedMessage + '" on ROT' + str(i-1))
         foundDecryptedMessage = True
     else:
         FailedAttemptROT = i
         FailedAttemptMessage = decryptedMessage
-        FailedAttemptRecord[FailedAttemptROT] = FailedAttemptMessage
+        failedAttemptRecord[FailedAttemptROT] = FailedAttemptMessage
         decryptedMessage = ""
 
 if foundDecryptedMessage == False:
@@ -54,26 +62,28 @@ if foundDecryptedMessage == False:
         print()
         for y in range(1,26):
             time.sleep(0.3)
-            print('ROT' + str(y-1) + " -> " + FailedAttemptRecord[y])
+            print('ROT' + str(y-1) + " -> " + failedAttemptRecord[y])
         correctAttemptIsAvailable = input("Was there any correct attempt? (YES, NO): ")
         if correctAttemptIsAvailable == "YES":
             AttemptChosenIsRight = False
             while AttemptChosenIsRight == False:
                 correctAttempt = 1 + int(input("According to the rotations, which one was it? (1, 2, 3, etc.): "))
-                correctAttemptChosen = FailedAttemptRecord[correctAttempt]
+                correctAttemptChosen = failedAttemptRecord[correctAttempt]
                 correctAttemptIsRight = input('"' + correctAttemptChosen + '", this one? (YES, NO): ')
                 if correctAttemptIsRight == "YES":
                     AttemptChosenIsRight = True
                     print("Thanks, I'll add the new words to the dictionary.")
-                    for z in range(len(FailedAttemptRecord[correctAttempt])):
-                        decryptedAttempt = FailedAttemptRecord[correctAttempt]
+                    for z in range(len(failedAttemptRecord[correctAttempt])):
+                        decryptedAttempt = failedAttemptRecord[correctAttempt]
                         decryptedAttemptLetter = decryptedAttempt[z]
                         decryptedAttemptLetter = decryptedAttemptLetter.upper()
                         if decryptedAttemptLetter != " ":
                             decryptedAttemptWord = decryptedAttemptWord + decryptedAttemptLetter
-                    with open('dictionary.csv', 'a', newline='') as csvfile:
-                        DictWrite = csv.writer(csvfile, delimiter=',')
-                        DictWrite.writerow([decryptedAttemptWord])
+                        else:
+                            with open('dictionary.csv', 'a', newline='') as csvfile:
+                                DictWrite = csv.writer(csvfile, delimiter=',')
+                                DictWrite.writerow([decryptedAttemptWord])
+                            decryptedAttemptWord = ""
         else:
             print("Then you got some typo mistake, restarting...")
             time.sleep(0.5)
