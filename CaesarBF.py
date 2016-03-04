@@ -55,7 +55,7 @@ if messageIsCorrect == "YES":
         print('ROT' + str(y-1) + " -> " + FailedAttemptRecord[y])
     correctAttemptIsAvailable = input("Was there any correct attempt? (YES, NO): ")
     if correctAttemptIsAvailable == "YES":
-        correctAttempt = int(input("According to the rotations, which one was it? (1, 2, 3, etc.): "))
+        correctAttempt = 1 + int(input("According to the rotations, which one was it? (1, 2, 3, etc.): "))
         correctAttemptChosen = FailedAttemptRecord[correctAttempt]
         correctAttemptIsRight = input('"' + correctAttemptChosen + '", this one? (YES, NO): ')
         if correctAttemptIsRight == "YES":
@@ -66,5 +66,5 @@ if messageIsCorrect == "YES":
                 decryptedAttemptLetter = decryptedAttemptLetter.upper()
                 if decryptedAttemptLetter != " ":
                     decryptedAttemptWord = decryptedAttemptWord + decryptedAttemptLetter
-                else:
-                    # Here, add decryptedAttemptWord to the CSV file
+            print("This would add:" + decryptedAttemptWord)
+            #Replace the previous print with your code, thanks.
