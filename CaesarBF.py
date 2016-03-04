@@ -31,9 +31,9 @@ for i in range(1,26):
             newLetter = newLetter - 26
         decryptedLetter = Letters[newLetter]
         decryptedMessage = decryptedMessage + decryptedLetter
-    print("ROT" + str(i-1) + " -> " + decryptedMessage)
+    #print("ROT" + str(i-1) + " -> " + decryptedMessage)
     if decryptedMessage in(words):
-        print("This is the real word")
+        print('Decrypted message: "' + decryptedMessage + '" on ROT' + str(i-1))
     decryptedMessage = ""
 
 
