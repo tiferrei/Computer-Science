@@ -1,3 +1,8 @@
+#Caesar Brute Forcer
+
+#  Created by Tiago Ferreira and Alex Butler on 2/03/2016.
+#  Copyright (c) 2016 Tiago Ferreira and Alex Butler. All rights reserved.
+
 import time
 import sys
 import csv
@@ -10,6 +15,7 @@ Letters = ["A", "B", "C", "D", "E", "F",
 message = input("Message to brute force: ")
 message = message.upper()
 decryptedMessage = ""
+decryptedAttemptWord = ""
 FailedAttemptRecord = {}
 
 with open("dictionary.csv") as csvfile:
@@ -34,7 +40,7 @@ for i in range(1,26):
         print('Decrypted message: "' + decryptedMessage + '" on ROT' + str(i-1))
     else:
         FailedAttemptROT = i
-        FailedAttemptMessage = str("ROT" + str(i-1) + " -> " + decryptedMessage)
+        FailedAttemptMessage = decryptedMessage
         FailedAttemptRecord[FailedAttemptROT] = FailedAttemptMessage
         decryptedMessage = ""
 
@@ -46,9 +52,19 @@ if messageIsCorrect == "YES":
     print()
     for y in range(1,26):
         time.sleep(0.3)
-        print(FailedAttemptRecord[y])
+        print('ROT' + str(y-1) + " -> " + FailedAttemptRecord[y])
     correctAttemptIsAvailable = input("Was there any correct attempt? (YES, NO): ")
     if correctAttemptIsAvailable == "YES":
-        correctAttempt = str(input("According to the rotations, which one was it? (1, 2, 3, etc.): "))
+        correctAttempt = int(input("According to the rotations, which one was it? (1, 2, 3, etc.): "))
         correctAttemptChosen = FailedAttemptRecord[correctAttempt]
         correctAttemptIsRight = input('"' + correctAttemptChosen + '", this one? (YES, NO): ')
+        if correctAttemptIsRight == "YES":
+            print("Thanks, I'll add the new words to the dictionary.")
+            for z in range(len(FailedAttemptRecord[correctAttempt])):
+                decryptedAttempt = FailedAttemptRecord[correctAttempt]
+                decryptedAttemptLetter = decryptedAttempt[z]
+                decryptedAttemptLetter = decryptedAttemptLetter.upper()
+                if decryptedAttemptLetter != " ":
+                    decryptedAttemptWord = decryptedAttemptWord + decryptedAttemptLetter
+                else:
+                    # Here, add decryptedAttemptWord to the CSV file
