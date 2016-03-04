@@ -40,9 +40,6 @@ for i in range(1,26):
             letter = message[x+1]
             letter = letter.upper()
             decryptedMessage = decryptedMessage + " "
-    #for w in range(len(decryptedMessage)):
-        #Having some difficulty getting it to check every individual word :(
-        # By the way, I'm using BW JM WZ VWB BW JM, which dechipered is TO BE OR NOT TO BE on ROT18
     if decryptedMessage in(words):
         print('Decrypted message: "' + decryptedMessage + '" on ROT' + str(i-1))
         foundDecryptedMessage = True
@@ -51,9 +48,8 @@ for i in range(1,26):
         FailedAttemptMessage = decryptedMessage
         failedAttemptRecord[FailedAttemptROT] = FailedAttemptMessage
         decryptedMessage = ""
-
 if foundDecryptedMessage == False:
-    print("No correct english frase/word identified. ")
+    print("No correct english frase/word identified.")
     time.sleep(0.5)
     messageIsCorrect = input('Is the encrypted message, "' + message + '" correct? (YES, NO): ')
     time.sleep(0.5)
