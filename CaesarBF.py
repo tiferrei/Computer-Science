@@ -66,5 +66,7 @@ if messageIsCorrect == "YES":
                 decryptedAttemptLetter = decryptedAttemptLetter.upper()
                 if decryptedAttemptLetter != " ":
                     decryptedAttemptWord = decryptedAttemptWord + decryptedAttemptLetter
-            print("This would add:" + decryptedAttemptWord)
-            #Replace the previous print with your code, thanks.
+
+            with open('dictionary.csv', 'a', newline='') as csvfile:
+                DictWrite = csv.writer(csvfile, delimiter=',')
+                DictWrite.writerow([decryptedAttemptWord])
