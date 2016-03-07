@@ -13,6 +13,8 @@ Letters = ["A", "B", "C", "D", "E", "F",
 message = input("Message to brute force: ")
 message = message.upper()
 message = message.split(" ")
+messageAdd = []
+messageAdded = ""
 decryptedMessage = ""
 decryptedAttemptWord = ""
 foundDecryptedMessage = False
@@ -44,13 +46,18 @@ for n in range(len(message)):
                 letter = letter.upper()
                 decryptedMessage = decryptedMessage + " "
         if decryptedMessage in(words):
-            print('Decrypted message: "' + decryptedMessage + '" on ROT' + str(i-1))
+            # print('Decrypted message: "' + decryptedMessage + '" on ROT' + str(i-1))
+            messageAdd.append(decryptedMessage)
             foundDecryptedMessage = True
         else:
             FailedAttemptROT = i
             FailedAttemptMessage = decryptedMessage
             failedAttemptRecord[FailedAttemptROT] = FailedAttemptMessage
             decryptedMessage = ""
+for items in range(len(messageAdd)):
+    messageAdded = messageAdded + messageAdd[items] + " "
+messageAdded = messageAdded[:-1]
+print('Decrypted message: "' + messageAdded + '" on ROT' + str(i-2))
 if foundDecryptedMessage == False:
     print("No correct english frase/word identified.")
     time.sleep(0.5)
