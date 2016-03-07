@@ -12,6 +12,7 @@ Letters = ["A", "B", "C", "D", "E", "F",
             "Y", "Z"]
 message = input("Message to brute force: ")
 message = message.upper()
+message = message.split(" ")
 decryptedMessage = ""
 decryptedAttemptWord = ""
 foundDecryptedMessage = False
@@ -24,30 +25,32 @@ with open("dictionary.csv") as csvfile:
         word = row[0]
         words.append(word)
 
-for i in range(1,26):
-    looper = i
-    for x in range(len(message)):
-        letter = message[x]
-        letter = letter.upper()
-        if letter != " ":
-            currentLetter = Letters.index(letter)
-            newLetter = currentLetter + (looper - 1)
-            if newLetter > 25:
-                newLetter = newLetter - 26
-            decryptedLetter = Letters[newLetter]
-            decryptedMessage = decryptedMessage + decryptedLetter
-        else:
-            letter = message[x+1]
+for n in range(len(message)):
+    for i in range(1,26):
+        looper = i
+        for x in range(len(message[n])):
+            letter = message[n]
+            letter = letter[x]
             letter = letter.upper()
-            decryptedMessage = decryptedMessage + " "
-    if decryptedMessage in(words):
-        print('Decrypted message: "' + decryptedMessage + '" on ROT' + str(i-1))
-        foundDecryptedMessage = True
-    else:
-        FailedAttemptROT = i
-        FailedAttemptMessage = decryptedMessage
-        failedAttemptRecord[FailedAttemptROT] = FailedAttemptMessage
-        decryptedMessage = ""
+            if letter != " ":
+                currentLetter = Letters.index(letter)
+                newLetter = currentLetter + (looper - 1)
+                if newLetter > 25:
+                    newLetter = newLetter - 26
+                decryptedLetter = Letters[newLetter]
+                decryptedMessage = decryptedMessage + decryptedLetter
+            else:
+                letter = message[x+1]
+                letter = letter.upper()
+                decryptedMessage = decryptedMessage + " "
+        if decryptedMessage in(words):
+            print('Decrypted message: "' + decryptedMessage + '" on ROT' + str(i-1))
+            foundDecryptedMessage = True
+        else:
+            FailedAttemptROT = i
+            FailedAttemptMessage = decryptedMessage
+            failedAttemptRecord[FailedAttemptROT] = FailedAttemptMessage
+            decryptedMessage = ""
 if foundDecryptedMessage == False:
     print("No correct english frase/word identified.")
     time.sleep(0.5)
