@@ -58,8 +58,9 @@ for n in range(len(message)):
 for items in range(len(messageAdd)):
     messageAdded = messageAdded + messageAdd[items] + " "
 messageAdded = messageAdded[:-1]
-print('Decrypted message: "' + messageAdded + '" on ROT' + str(i-2))
-if foundDecryptedMessage == False:
+if foundDecryptedMessage == True:
+            print('Decrypted message: "' + messageAdded + '" on ROT' + str(i-2))
+elif foundDecryptedMessage == False:
     print("No correct english frase/word identified.")
     time.sleep(0.5)
     messageIsCorrect = input('Is the encrypted message, "' + messageEncrypted + '" correct? (YES, NO): ')
