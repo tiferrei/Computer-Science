@@ -12,6 +12,7 @@ Letters = ["A", "B", "C", "D", "E", "F",
             "Y", "Z"]
 message = input("Message to brute force: ")
 message = message.upper()
+messageEncrypted = message
 message = message.split(" ")
 messageAdd = []
 messageAdded = ""
@@ -61,7 +62,7 @@ print('Decrypted message: "' + messageAdded + '" on ROT' + str(i-2))
 if foundDecryptedMessage == False:
     print("No correct english frase/word identified.")
     time.sleep(0.5)
-    messageIsCorrect = input('Is the encrypted message, "' + message + '" correct? (YES, NO): ')
+    messageIsCorrect = input('Is the encrypted message, "' + messageEncrypted + '" correct? (YES, NO): ')
     time.sleep(0.5)
     if messageIsCorrect == "YES":
         print("OK, so I'll give you all the possibilites...")
