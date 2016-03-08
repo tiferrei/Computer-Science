@@ -91,6 +91,7 @@ elif foundDecryptedMessage == False:
                             with open('dictionary.csv', 'a', newline='') as csvfile:
                                 DictWrite = csv.writer(csvfile, delimiter=',')
                                 DictWrite.writerow([decryptedAttemptWord])
+                                DictWrite.close()
                             decryptedAttemptWord = ""
         else:
             print("Then you got some typo mistake, restarting...")
