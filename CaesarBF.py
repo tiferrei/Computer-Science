@@ -82,6 +82,7 @@ elif foundDecryptedMessage == False:
                     AttemptChosenIsRight = True
                     print("Thanks, I'll add the new words to the dictionary.")
                     for z in range(len(failedAttemptRecord[correctAttempt])):
+
                         decryptedAttempt = failedAttemptRecord[correctAttempt]
                         decryptedAttemptLetter = decryptedAttempt[z]
                         decryptedAttemptLetter = decryptedAttemptLetter.upper()
@@ -90,9 +91,11 @@ elif foundDecryptedMessage == False:
                         else:
                             with open('dictionary.csv', 'a', newline='') as csvfile:
                                 DictWrite = csv.writer(csvfile, delimiter=',')
-                                DictWrite.writerow([decryptedAttemptWord])
+                                DictWrite.writerow(decryptedAttemptWord)
                                 DictWrite.close()
+                                print("Added " + decryptedAttemptWord)
                             decryptedAttemptWord = ""
+
         else:
             print("Then you got some typo mistake, restarting...")
             time.sleep(0.5)
