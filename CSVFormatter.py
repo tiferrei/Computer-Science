@@ -12,9 +12,26 @@
 #  SOFTWARE.
 
 import csv
+import time
+import sys
 
 states = []
 statesPop = 0
+
+def delay_print(s):
+    for c in s:
+        sys.stdout.write( '%s' % c )
+        sys.stdout.flush()
+        time.sleep(0.03)
+    print()
+
+
+def menu():
+    delay_print("Welcome to the NSA's US States database, please choose an option:")
+    delay_print("1 - Print all data.")
+    delay_print("2 - Select data.")
+    delay_print("3 - Quit.")
+
 
 with open ("USStates.txt") as csvfile:
     statesCsv = csv.reader(csvfile, delimiter = ",")
