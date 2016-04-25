@@ -14,6 +14,7 @@
 import csv
 
 states = []
+statesPop = 0
 
 with open ("USStates.txt") as csvfile:
     statesCsv = csv.reader(csvfile, delimiter = ",")
@@ -26,3 +27,8 @@ print("--------------------------------------")
 for i in range(listLength):
     print("|{0:15}|{1:4}|{2:15}|".format(states[i][0], states[i][1].center(4), states[i][3]))
 print("--------------------------------------")
+
+for x in range(listLength):
+    statesPop = statesPop + int(states[x][4])
+
+print("Total population: " + str(statesPop))
