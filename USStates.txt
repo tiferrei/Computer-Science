@@ -1,0 +1,50 @@
+Alabama,AL,1819,Montgomery,4849377
+Alaska,AK,1959,Juneau,736732
+Arizona,AZ,1912,Phoenix,6731484
+Arkansas,AR,1836,Little Rock,2966369
+California,CA,1850,Sacramento,38802500
+Colorado,CO,1876,Denver,5355866
+Connecticut,CT,1788,Hartford,3596677
+Delaware,DE,1787,Dover,935614
+Florida,FL,1845,Tallahassee,19893297
+Georgia,GA,1788,Atlanta,10097343
+Hawaii,HI,1959,Honolulu,1419561
+Idaho,ID,1890,Boise,1634464
+Illinois,IL,1818,Springfield,12880580
+Indiana,IN,1816,Indianapolis,6596855
+Iowa,IA,1846,Des Moines,3107126
+Kansas,KS,1861,Topeka,2904021
+Kentucky,KY,1792,Frankfort,4413457
+Louisiana,LA,1812,Baton Rouge,4649676
+Maine,ME,1820,Augusta,1330089
+Maryland,MD,1788,Annapolis,5976407
+Massachusetts,MA,1788,Boston,6745408
+Michigan,MI,1837,Lansing,9909877
+Minnesota,MN,1858,Saint Paul,5457173
+Mississippi,MS,1817,Jackson,2994079
+Missouri,MO,1821,Jefferson City,6063589
+Montana,MT,1889,Helena,1023579
+Nebraska,NE,1867,Lincoln,1881503
+Nevada,NV,1864,Carson City,2839098
+New Hampshire,NH,1788,Concord,1326813
+New Jersey,NJ,1787,Trenton,8938175
+New Mexico,NM,1912,Santa Fe,2085572
+New York,NY,1788,Albany,19746227
+North Carolina,NC,1789,Raleigh,9943964
+North Dakota,ND,1889,Bismarck,739482
+Ohio,OH,1803,Columbus,11594163
+Oklahoma,OK,1907,Oklahoma City,3878051
+Oregon,OR,1859,Salem,3970239
+Pennsylvania,PA,1787,Harrisburg,12787209
+Rhode Island,RI,1790,Providence,1055173
+South Carolina,SC,1788,Columbia,4832482
+South Dakota,SD,1889,Pierre,853175
+Tennessee,TN,1796,Nashville,6549352
+Texas,TX,1845,Austin,26956958
+Utah,UT,1896,Salt Lake City,2942902
+Vermont,VT,1791,Montpelier,626562
+Virginia,VA,1788,Richmond,8326289
+Washington,WA,1889,Olympia,7061530
+West Virginia,WV,1863,Charleston,1850326
+Wisconsin,WI,1848,Madison,5757564
+Wyoming,WY,1890,Cheyenne,584153
