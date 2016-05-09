@@ -1,0 +1,5 @@
+1, What is the capital of Portugal?,A,LISBON,BERLIN,MADRID,VATICAN CITY
+2, What is the capital of the USA?,C,LISBON,FRANCE,WASHINGTON D.C.,NEW YORK
+3, What is the capital of France?,D,FRANCE,NEW YORK,MADRID,PARIS
+4, What is the capital of Spain?,B,LISBON,MADRID,BARCELONA,VENICE
+5, What is the capital of Italy?,A,ROME,VATICAN CITY,GREECE,BARCELONA
