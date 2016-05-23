@@ -13,7 +13,6 @@
 
 def summing(x,y):
     total = x + y
-    print(total)
     return total
 
 def domean(a,b):
@@ -26,6 +25,12 @@ def subtract(c,d):
     print(sub)
     return subtract
 
+def sayALotOfStuff():
+    print("Hello")
+    print("Hello!!")
+    print("Hello again!!!")
+
+sayALotOfStuff()
 summing(2,3)
 domean(2,4)
 subtract(5,2)
