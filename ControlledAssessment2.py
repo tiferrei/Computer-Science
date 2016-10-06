@@ -10,24 +10,24 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 
-custNumber = 0
+custNumber = 0 # Declaration and initialization of main variables.
 dateOfEstimate = ""
 numberOfRooms = 0
 rooms = []
 typeOfEmployee = ""
 
-def menu():
+def menu(): # Menu declaration
     print("Welcome Caroline!")
     print()
     print("Available options:")
     print("A -> Register new order")
     choise = input("Please select an option (A): ")
     if choise == "A":
-        registerNewOrder()
+        registerNewOrder() # Call to registerNewOrder function.
 
-def registerNewOrder():
+def registerNewOrder(): # register function declaration.
     print("Please enter some info:")
-    global custNumber
+    global custNumber # Global declarations
     global dateOfEstimate
     global numberOfRooms
     global rooms
@@ -51,42 +51,42 @@ def registerNewOrder():
             area = width * height
             walls.append(area)
         tempList = [name, numberOfWalls, hasWallpaper, walls]
-        rooms.append(tempList)
+        rooms.append(tempList) # Cahce data
     typeOfEmployee = input("Type of employee (AP, FQ): ")
-    calculateOrder()
+    calculateOrder() # Call to calculateOrder
 
 def calculateOrder():
     price = 0
-    global numberOfRooms
+    global numberOfRooms # Global declarations
     global rooms
     global typeOfEmployee
     print()
-    for room in range(1, numberOfRooms+1):
+    for room in range(1, numberOfRooms+1): # For each room...
         print(rooms[room-1][0] + ":")
         if rooms[room-1][2] == True:
             price += 70
             print("     Remove wallpaper –> £70")
-        for wall in range(1, len(rooms[room-1][3])+1):
+        for wall in range(1, len(rooms[room-1][3])+1): #For each wall print the price
             print("     Wall #" + str(wall) + " –> £" + str(15 * rooms[room-1][3][wall-1]))
-            price += 15 * rooms[room-1][3][wall-1]
-    if typeOfEmployee == "AP":
+            price += 15 * rooms[room-1][3][wall-1] # Print the total for the room.
+    if typeOfEmployee == "AP": #Add price of employee.
         price += 100
         print("Apprentice painter –> £100")
     else:
         price += 250
         print("Fully-qualified painter –> £250")
     print()
-    print("Order price: £" + str(price))
+    print("Order price: £" + str(price)) # Print total
     totalPrice = (price * 120) / 100
-    print("Order + VAT: £" + str(totalPrice))
+    print("Order + VAT: £" + str(totalPrice)) # Print total with vat
     print()
-    askRestart()
+    askRestart() # Call to restart.
 
-def askRestart():
+def askRestart(): # Declaration fo restart function.
     wantsTo = input("Would you like to generate another estimate (YES, NO)? ")
     if wantsTo == "YES":
-        menu()
+        menu() #Call to menu
     else:
-        print("Goodbye.")
+        print("Goodbye.") # See ya, exit program.
 
-menu()
+menu() # Start program.
