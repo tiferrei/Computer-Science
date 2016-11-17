@@ -35,22 +35,22 @@ def registerNewOrder(): # register function declaration.
     custNumber = int(input("Customer Number: "))
     dateOfEstimate = input("Date of estimate: ")
     numberOfRooms = int(input("Number of rooms that require painting: "))
-    rooms = []
-    for room in range(1, numberOfRooms+1):
-        name = input("Room name: ")
+    rooms = [] #Empty rooms list
+    for room in range(1, numberOfRooms+1): # For each room
+        name = input("Room name: ") # Get info
         numberOfWalls = int(input("Number of walls in the " + str(name) + ": "))
         hasWallpaperStr = input("Is there wallpaper that needs to be removed (YES, NO)? ")
         if hasWallpaperStr == "YES":
             hasWallpaper = True
         else:
             hasWallpaper = False
-        walls = []
+        walls = [] #empty wall list
         for wall in range(1, numberOfWalls+1):
-            width = float(input("Width of wall #" + str(wall) + ": "))
+            width = float(input("Width of wall #" + str(wall) + ": ")) # get data
             height = float(input("Height of wall #" + str(wall) + ": "))
             area = width * height
-            walls.append(area)
-        tempList = [name, numberOfWalls, hasWallpaper, walls]
+            walls.append(area) # append each wall
+        tempList = [name, numberOfWalls, hasWallpaper, walls] #create tempList
         rooms.append(tempList) # Cahce data
     typeOfEmployee = input("Type of employee (AP, FQ): ")
     calculateOrder() # Call to calculateOrder
