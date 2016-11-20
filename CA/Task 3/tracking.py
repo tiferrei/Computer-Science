@@ -13,6 +13,7 @@
 import csv, sys, time
 
 def menu(): # Menu declaration
+    print()
     print("Welcome Caroline!")
     print()
     print("Available options:")
