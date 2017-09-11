@@ -27,3 +27,7 @@ def printBoard():
     print(" " + board[2][0] + " | " + board[2][1] + " | " + board[2][2] + " ")
 
 printBoard()
+
+def putpiece(piece, row, column):
+  if isEmpty(row, column):
+    board[row][column] = piece
