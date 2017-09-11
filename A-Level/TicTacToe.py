@@ -30,3 +30,7 @@ def isEMpty(row, column):
         return True
     else:
         return False
+
+def putPiece(piece, row, column):
+    if isEmpty(row, column):
+        board[row][column] = piece
