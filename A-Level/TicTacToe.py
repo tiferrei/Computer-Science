@@ -18,7 +18,6 @@ board = [[" ", " ", " "],[" ", " ", " "],[" ", " ", " "]]
 isComputerTurn = False
 computerUsesX = False
 
-
 def printBoard():
     print(" " + board[0][0] + " | " + board[0][1] + " | " + board[0][2] + " ")
     print("-----------")
@@ -26,8 +25,12 @@ def printBoard():
     print("-----------")
     print(" " + board[2][0] + " | " + board[2][1] + " | " + board[2][2] + " ")
 
-printBoard()
+def isEMpty(row, column):
+    if board[row][column] == " ":
+        return True
+    else:
+        return False
 
-def putpiece(piece, row, column):
-  if isEmpty(row, column):
-    board[row][column] = piece
+def putPiece(piece, row, column):
+    if isEmpty(row, column):
+        board[row][column] = piece
