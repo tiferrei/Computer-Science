@@ -46,8 +46,9 @@ def preventOpponentLine():
             for place in possibleLines[line]:
                 if board[line][place] == "X" and computerUses == "X":
                     break
-                else:
-                    opponentCounter += 1
+                elif board[line][place] == "O" and computerUses == "O":
+                    break
+                opponentCounter += 1
         if opponentCounter == 2:
             putPiece(line, place)
             isComputerTurn = False
@@ -56,7 +57,11 @@ def preventOpponentLine():
 
 def AISelectPlace():
     for line in len(possibleLines):
+        playCounter = 0
         for place in len(possibleLines[line]):
+            if board[line][place] == "X" and computerUses == "X":
+
+
 
 def selectUsage():
     print("In this game, X goes first.")
