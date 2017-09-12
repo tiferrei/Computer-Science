@@ -39,5 +39,18 @@ def putPiece(piece, row, column):
         board[row][column] = piece
 
 def preventOpponentLine():
+  if isComputerTurn:
+    for line in len(possibleLines):
+      opponentCounter = 0
+      for place in possibleLines[line]:
+        if board[line][place] == "X" and computerUses == "X":
+          break
+      else:
+        opponentCounter = opponentCounter+1
+    if opponentCounter == 2:
+      putPiece(line,place)
+      isComputerTurn = False
+    else:
+      isComputerTurn = True
 
 def AISelectPlace():
