@@ -19,7 +19,8 @@ possibleLines = [["00", "01", "02"], ["10", "11", "12"], ["20", "21", "22"],
                  ["00", "10", "20"], ["01", "11", "21"], ["02", "12", "22"],
                  ["00", "11", "22"], ["20", "11", "02"]]
 isComputerTurn = False
-computerUsesX = False
+userUses = ""
+computerUses = ""
 
 def printBoard():
     print(" " + board[0][0] + " | " + board[0][1] + " | " + board[0][2] + " ")
@@ -39,18 +40,28 @@ def putPiece(piece, row, column):
         board[row][column] = piece
 
 def preventOpponentLine():
-  if isComputerTurn:
-    for line in len(possibleLines):
-      opponentCounter = 0
-      for place in possibleLines[line]:
-        if board[line][place] == "X" and computerUses == "X":
-          break
-      else:
-        opponentCounter = opponentCounter+1
-    if opponentCounter == 2:
-      putPiece(line,place)
-      isComputerTurn = False
-    else:
-      isComputerTurn = True
+    if isComputerTurn:
+        for line in len(possibleLines):
+            opponentCounter = 0
+            for place in possibleLines[line]:
+                if board[line][place] == "X" and computerUses == "X":
+                    break
+                else:
+                    opponentCounter += 1
+        if opponentCounter == 2:
+            putPiece(line, place)
+            isComputerTurn = False
+        else:
+            isComputerTurn = True
 
 def AISelectPlace():
+    for line in len(possibleLines):
+        for place in len(possibleLines[line]):
+
+def selectUsage():
+    print("In this game, X goes first.")
+    userUses = input("Which piece would you like to use? (X, O): ")
+    if userUses == "X":
+        computerUses = "O"
+    else:
+        computerUses = "X"
