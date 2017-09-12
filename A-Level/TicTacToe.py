@@ -14,7 +14,10 @@
 import sys
 import time
 
-board = [[" ", " ", " "],[" ", " ", " "],[" ", " ", " "]]
+board = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
+possibleLines = [["00", "01", "02"], ["10", "11", "12"], ["20", "21", "22"],
+                 ["00", "10", "20"], ["01", "11", "21"], ["02", "12", "22"],
+                 ["00", "11", "22"], ["20", "11", "02"]]
 isComputerTurn = False
 computerUsesX = False
 
@@ -34,3 +37,7 @@ def isEMpty(row, column):
 def putPiece(piece, row, column):
     if isEmpty(row, column):
         board[row][column] = piece
+
+def preventOpponentLine():
+
+def AISelectPlace():
