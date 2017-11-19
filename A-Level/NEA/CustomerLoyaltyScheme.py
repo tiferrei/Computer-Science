@@ -11,7 +11,6 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 
-from enum import Enum
 from datetime import date
 from random import randint
 
