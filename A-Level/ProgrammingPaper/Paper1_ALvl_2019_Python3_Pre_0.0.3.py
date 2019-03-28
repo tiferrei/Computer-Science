@@ -356,6 +356,15 @@ def GetItem(Items, ItemToGet, CurrentLocation):
             print("You have got that now.")
     return False, Items
 
+def DropItem(Items, ItemToDrop, CurrentLocation):
+    IndexOfItem = GetIndexOfItem(ItemToDrop, -1, Items)
+    if not Items[IndexOfItem].Location == INVENTORY:
+        print("You do not have " + ItemToDrop + ".")
+    else:
+        Items = ChangeLocationOfItem(Items, IndexOfItem, CurrentLocation)
+        print("You have dropped " + ItemToDrop + ".")
+    return False, Items
+
 def CheckIfDiceGamePossible(Items, Characters, OtherCharacterName):
     PlayerHasDie = False
     PlayersInSameRoom = False
@@ -497,6 +506,7 @@ def ShowHelp():
     print()
     print("Commands available:")
     print("  get - Get item.")
+    print("  drop - Drop item.")
     print("  use - Use item.")
     print("  go - Move the character.")
     print("  read - Read item.")
@@ -526,6 +536,8 @@ def PlayGame(Characters, Items, Places):
         Command, Instruction = ExtractCommand(Instruction)
         if Command == "get":
             StopGame, Items = GetItem(Items, Instruction, Characters[0].CurrentLocation)
+        elif Command == "drop":
+            StopGame, Items = DropItem(Items, Instruction, Characters[0].CurrentLocation)
         elif Command == "use":
             StopGame, Items = UseItem(Items, Instruction, Characters[0].CurrentLocation, Places)
         elif Command == "go":
