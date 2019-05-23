@@ -325,7 +325,7 @@ def ReadItem(Items, ItemToRead, CurrentLocation):
         if SubCommand == "say":
             Say(SubCommandParameter)
 
-def GetItem(Items, ItemToGet, CurrentLocation):
+def GetItem(Items, ItemToGet, CurrentLocation, moveCounter):
     SubCommand = ""
     SubCommandParameter = ""
     CanGet = False
@@ -350,6 +350,7 @@ def GetItem(Items, ItemToGet, CurrentLocation):
             Say(SubCommandParameter)
         elif SubCommand == "win":
             Say("You have won the game")
+            Say("It took you " + moveCounter + "moves.")
             return True, Items
         if "gettable" in Items[IndexOfItem].Status:
             Items = ChangeLocationOfItem(Items, IndexOfItem, INVENTORY)
@@ -528,14 +529,16 @@ def ExamineRoom(Items, Places, Character):
 def PlayGame(Characters, Items, Places):
     StopGame = False
     Moved = True
+    MoveCounter = 0
     while not StopGame:
         if Moved:
             ExamineRoom(Items, Places, Characters[0])
             Moved = False
+            MoveCounter += 1
         Instruction = GetInstruction()
         Command, Instruction = ExtractCommand(Instruction)
         if Command == "get":
-            StopGame, Items = GetItem(Items, Instruction, Characters[0].CurrentLocation)
+            StopGame, Items = GetItem(Items, Instruction, Characters[0].CurrentLocation, MoveCounter)
         elif Command == "drop":
             StopGame, Items = DropItem(Items, Instruction, Characters[0].CurrentLocation)
         elif Command == "use":
