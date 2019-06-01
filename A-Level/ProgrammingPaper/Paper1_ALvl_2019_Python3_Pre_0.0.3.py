@@ -350,7 +350,7 @@ def GetItem(Items, ItemToGet, CurrentLocation, moveCounter):
             Say(SubCommandParameter)
         elif SubCommand == "win":
             Say("You have won the game")
-            Say("It took you " + moveCounter + "moves.")
+            Say("It took you " + str(moveCounter) + " moves.")
             return True, Items
         if "gettable" in Items[IndexOfItem].Status:
             Items = ChangeLocationOfItem(Items, IndexOfItem, INVENTORY)
